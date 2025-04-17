@@ -6,14 +6,6 @@ import (
 	"time"
 )
 
-func measureResponseTime(url string) time.Duration {
-	start := time.Now()
-	if _, err := http.Get(url); err != nil {
-		panic(err)
-	}
-	return time.Since(start)
-}
-
 var tenSecondTimeout = 10 * time.Second
 
 func Racer(a, b string) (winner string, error error) {
